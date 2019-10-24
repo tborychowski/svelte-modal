@@ -60,6 +60,11 @@ function onBackdropClick (e) {
 	if (!e.target.closest('.modal')) close();
 }
 
+function onDocKeydown (e) {
+	if (e.key === 'Escape' && opened) close();
+}
+
+
 export function open () {
 	if (opened) return;
 	triggerEl = document.activeElement;
@@ -67,7 +72,8 @@ export function open () {
 	setTimeout(() => {
 		opened = true;
 		focusFirst();
-	}, 10);
+		document.addEventListener('keydown', onDocKeydown);
+	}, 100);
 }
 
 export function close () {
@@ -76,6 +82,7 @@ export function close () {
 	setTimeout(() => {
 		backdropEl.style.display = 'none';
 		if (triggerEl) triggerEl.focus();
+		document.removeEventListener('keydown', onDocKeydown);
 	}, 300);
 
 }

@@ -1,6 +1,6 @@
 {
   "name": "svelte-modal",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "GPL-3.0-or-later",
   "repository": {
     "type": "git",
@@ -12,7 +12,7 @@
   "devDependencies": {
     "svelte": "^3.12.1",
     "svelte-loader": "^2.13.6",
-    "webpack": "^4.41.1",
+    "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
   }
 }
